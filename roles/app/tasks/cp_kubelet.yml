@@ -1,2 +1,0 @@
-- name: cp_kubelet
-  template: src=kubelet.j2 dest=/root/kubelet
