@@ -1,0 +1,2 @@
+- name: update
+  shell: ntpdate ntp1.aliyun.com && hwclock --systohc

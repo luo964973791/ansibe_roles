@@ -1,0 +1,4 @@
+- hosts: Cluster-k8s
+  remote_user: root
+  roles:
+    -role: app

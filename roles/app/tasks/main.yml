@@ -1,0 +1,3 @@
+- include: update_time.yml
+- include: install_gcc.yml
+- include: cp_kubelet.yml
