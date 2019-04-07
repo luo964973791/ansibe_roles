@@ -1,5 +1,5 @@
 ---
 - include: update_time.yml
-- include: install_gcc.yml
-- include: kubelet_conf.yml
+#- include: install_gcc.yml
+#- include: kubelet_conf.yml
 - include: copy_etcd.yml

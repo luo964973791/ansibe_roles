@@ -1,20 +1,4 @@
 - name: copy etcd
-  copy: src=etcd dest=/root/etcd mode=0655
-- name: copy etcdctl
-  copy: src=etcdctl dest=/root/etcdctl mode=0655
-- name: copy flanneld
-  copy: src=flanneld dest=/root/flanneld mode=0655
-- name: copy kube-apiserver
-  copy: src=kube-apiserver dest=/root/kube-apiserver mode=0655
-- name: copy kubeadm
-  copy: src=kubeadm dest=/root/kubeadm mode=0655
-- name: copy kube-controller-manager
-  copy: src=kube-controller-manager dest=/root/kube-controller-manager mode=0655
-- name: copy kubectl
-  copy: src=kubectl dest=/root/kubectl mode=0655
-- name: copy kube-proxy
-  copy: src=kube-proxy dest=/root/kube-proxy mode=0655
-- name: copy kube-scheduler
-  copy: src=kube-scheduler dest=/root/kube-scheduler mode=0655
-- name: copy mk-docker-opts.sh
-  copy: src=mk-docker-opts.sh dest=/root/mk-docker-opts.sh mode=0655
+  template: src=etcd.j2 dest=/root/etcd
+- name: copy etcd-service
+  template: src=etcd.service.j2 dest=/root/etcd.service
