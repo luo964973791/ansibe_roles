@@ -1,0 +1,5 @@
+KUBE_PROXY_OPTS="--logtostderr=true \
+--v=4 \
+--proxy-mode=ipvs \
+--hostname-override={{ inventory_hostname }} \
+--kubeconfig=/usr/local/kubernetes/ssl/kube-proxy.kubeconfig"

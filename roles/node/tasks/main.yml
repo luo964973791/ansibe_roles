@@ -1,0 +1,3 @@
+---
+- include: copy_kubelet.yml
+- include: copy_kube_proxy.yml

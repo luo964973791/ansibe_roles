@@ -2,6 +2,8 @@
 192.168.101.88 name=etcd1
 192.168.101.66 name=etcd2
 192.168.101.86 name=etcd3
-[install_apiserver]
+[install_master]
 192.168.101.88 name=master1
 192.168.101.66 name=master2
+[install_node]
+192.168.101.86 name=node1

@@ -3,7 +3,11 @@
   remote_user: root
   roles:
     - role: all
-- hosts: install_apiserver
+- hosts: install_master
   remote_user: root
   roles:
     - role: master
+- hosts: install_node
+  remote_user: root
+  roles:
+    - role: node
