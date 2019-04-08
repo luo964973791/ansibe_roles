@@ -1,4 +1,4 @@
 - name: copy etcd
-  template: src=etcd.j2 dest=/root/etcd
+  template: src=etcd.j2 dest=/usr/local/kubernetes/cfg/etcd
 - name: copy etcd-service
-  template: src=etcd.service.j2 dest=/root/etcd.service
+  template: src=etcd.service.j2 dest=/lib/systemd/system/etcd.service mode=0755
