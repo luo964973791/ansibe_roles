@@ -1,5 +1,9 @@
 ---
-- hosts: k8s
+- hosts: all_server
   remote_user: root
   roles:
-    - role: app
+    - role: all
+- hosts: install_apiserver
+  remote_user: root
+  roles:
+    - role: master

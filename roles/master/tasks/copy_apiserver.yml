@@ -1,0 +1,4 @@
+- name: copy apiserver
+  template: src=kube-apiserver.j2 dest=/usr/local/kubernetes/cfg/kube-apiserver
+- name: copy apiserver-service
+  template: src=kube-apiserver.service.j2 dest=/lib/systemd/system/kube-apiserver.service mode=0755

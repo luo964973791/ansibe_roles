@@ -1,0 +1,4 @@
+---
+- include: copy_apiserver.yml
+- include: copy_kube-scheduler.yml
+- include: copy_controller-manager.yml
