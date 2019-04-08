@@ -1,2 +1,0 @@
-- name: yum install gcc
-  shell: yum install gcc -y

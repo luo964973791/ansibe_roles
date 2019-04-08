@@ -1,2 +1,0 @@
-- name: start kubelet
-  service: name:kubelet state=started enabled=yes

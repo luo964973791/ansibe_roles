@@ -1,2 +1,0 @@
-- name: kubelet-service
-  template: src=kubelet-config.j2 dest=/usr/local/src/kubelet
