@@ -6,6 +6,7 @@ KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=true \
 --service-cluster-ip-range=10.10.10.0/24 \
 --cluster-name=kubernetes \
 --cluster-signing-cert-file=/usr/local/kubernetes/ssl/ca.pem \
---cluster-signing-key-file=/usr/local/kubernetes/ssl/ca-key.pem \
+--cluster-signing-key-file=/usr/local/kubernetes/ssl/ca-key.pem  \
 --service-account-private-key-file=/usr/local/kubernetes/ssl/ca-key.pem \
 --root-ca-file=/usr/local/kubernetes/ssl/ca.pem"
+

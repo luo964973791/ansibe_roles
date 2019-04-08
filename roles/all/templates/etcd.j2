@@ -1,5 +1,5 @@
 #[Member]
-ETCD_NAME="{{ name }}"
+ETCD_NAME="{{ etcd_name }}"
 ETCD_DATA_DIR="/var/lib/etcd/default.etcd"
 ETCD_LISTEN_PEER_URLS="https://{{ inventory_hostname }}:2380"
 ETCD_LISTEN_CLIENT_URLS="https://{{ inventory_hostname }}:2379"

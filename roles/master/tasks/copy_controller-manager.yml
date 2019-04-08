@@ -1,4 +1,4 @@
 - name: copy controller
-  template: src=controller-manager.j2 dest=/usr/local/kubernetes/cfg/kube-controller-manager
+  template: src=kube-controller-manager.j2 dest=/usr/local/kubernetes/cfg/kube-controller-manager
 - name: copy controller-manager.service
-  template: src=controller-manager.service.j2 dest=/lib/systemd/system/kube-controller-manager.service mode=0755
+  template: src=kube-controller-manager.service.j2 dest=/lib/systemd/system/kube-controller-manager.service mode=0755
