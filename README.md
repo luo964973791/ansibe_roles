@@ -19,4 +19,4 @@
 # 任务执行必须在roles同级目录下,执行检查语法命令.  
 ansible-playbook -C main.yml  
 # 如果成功就执行  
-ansible-playbook main.yml
+ansible-playbook -i hosts main.yml
