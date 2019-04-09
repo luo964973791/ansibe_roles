@@ -1,9 +1,9 @@
 [all_server]
-192.168.101.88 etcd_name=etcd1
-192.168.101.66 etcd_name=etcd2
-192.168.101.86 etcd_name=etcd3
+192.168.101.66 etcd_name=etcd1
+192.168.101.77 etcd_name=etcd2
+192.168.101.88 etcd_name=etcd3
 [install_master]
-192.168.101.88
 192.168.101.66
+192.168.101.77
 [install_node]
-192.168.101.86
+192.168.101.88
