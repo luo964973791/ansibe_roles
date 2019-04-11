@@ -1,9 +1,9 @@
 [all_server]
-192.168.101.66 etcd_name=etcd1
-192.168.101.77 etcd_name=etcd2
-192.168.101.88 etcd_name=etcd3
+192.168.101.66 etcd_name=etcd1 all_etcd="etcd1=https://192.168.101.66:2380,etcd2=https://192.168.101.77:2380,etcd3=https://192.168.101.88:2380"
+192.168.101.77 etcd_name=etcd2 all_etcd="etcd1=https://192.168.101.66:2380,etcd2=https://192.168.101.77:2380,etcd3=https://192.168.101.88:2380"
+192.168.101.88 etcd_name=etcd3 all_etcd="etcd1=https://192.168.101.66:2380,etcd2=https://192.168.101.77:2380,etcd3=https://192.168.101.88:2380"
 [install_master]
-192.168.101.66
-192.168.101.77
+192.168.101.66 etcd_servers="https://192.168.101.66:2379,https://192.168.101.77:2379,https://192.168.101.88:2379" vip=192.168.101.99
+192.168.101.77 etcd_servers="https://192.168.101.66:2379,https://192.168.101.77:2379,https://192.168.101.88:2379" vip=192.168.101.99
 [install_node]
 192.168.101.88

@@ -1,10 +1,10 @@
 KUBE_APISERVER_OPTS="--logtostderr=true \
 --v=4 \
---etcd-servers=https://192.168.101.66:2379,https://192.168.101.77:2379,https://192.168.101.88:2379 \
+--etcd-servers={{ etcd_servers }} \
 --bind-address=0.0.0.0 \
 --insecure-port=8080 \
 --secure-port=6443 \
---advertise-address=192.168.101.99 \
+--advertise-address={{ vip }} \
 --allow-privileged=true \
 --service-cluster-ip-range=10.10.10.0/24 \
 --admission-control=NamespaceLifecycle,LimitRanger,ServiceAccount,ResourceQuota,NodeRestriction --authorization-mode=RBAC,Node \
