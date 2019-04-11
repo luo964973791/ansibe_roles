@@ -1,7 +1,6 @@
+
 KUBE_SCHEDULER_OPTS="--logtostderr=true \
-  --address=127.0.0.1 \
-  --kubeconfig=/usr/local/kubernetes/ssl/kube-scheduler.kubeconfig \
-  --leader-elect=true \
-  --alsologtostderr=true \
-  --log-dir=/var/log/kubernetes \
-  --v=4"
+--v=4 \
+--master=127.0.0.1:8080 \
+--leader-elect"
+

@@ -1,22 +1,14 @@
+
+
 KUBE_CONTROLLER_MANAGER_OPTS="--logtostderr=true \
-  --address=127.0.0.1 \
-  --kubeconfig=/usr/local/kubernetes/ssl/kube-controller-manager.kubeconfig \
-  --authentication-kubeconfig=/usr/local/kubernetes/ssl/kube-controller-manager.kubeconfig \
-  --service-cluster-ip-range=10.10.10.0/24 \
-  --cluster-name=kubernetes \
-  --cluster-signing-cert-file=/usr/local/kubernetes/ssl/ca.pem \
-  --cluster-signing-key-file=/usr/local/kubernetes/ssl/ca-key.pem \
-  --experimental-cluster-signing-duration=8760h \
-  --root-ca-file=/usr/local/kubernetes/ssl/ca.pem \
-  --service-account-private-key-file=/usr/local/kubernetes/ssl/ca-key.pem \
-  --leader-elect=true \
-  --feature-gates=RotateKubeletServerCertificate=true \
-  --controllers=*,bootstrapsigner,tokencleaner \
-  --horizontal-pod-autoscaler-use-rest-clients=true \
-  --horizontal-pod-autoscaler-sync-period=10s \
-  --tls-cert-file=/usr/local/kubernetes/ssl/controller-manager.pem \
-  --tls-private-key-file=/usr/local/kubernetes/ssl/controller-manager-key.pem \
-  --use-service-account-credentials=true \
-  --alsologtostderr=true \
-  --log-dir=/var/log/kubernetes \
-  --v=4"
+--v=4 \
+--master=127.0.0.1:8080 \
+--leader-elect=true \
+--address=127.0.0.1 \
+--service-cluster-ip-range=10.10.10.0/24 \
+--cluster-name=kubernetes \
+--cluster-signing-cert-file=/usr/local/kubernetes/ssl/ca.pem \
+--cluster-signing-key-file=/usr/local/kubernetes/ssl/ca-key.pem  \
+--service-account-private-key-file=/usr/local/kubernetes/ssl/ca-key.pem \
+--root-ca-file=/usr/local/kubernetes/ssl/ca.pem"
+
