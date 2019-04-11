@@ -1,2 +1,7 @@
 - name: update time 同步阿里云的时间服务器。
   shell: ntpdate ntp1.aliyun.com && hwclock --systohc
+- name: enable ntp deamon
+  systemd:
+    state: restarted
+    daemon_reload: yes
+    name: ntpdate
