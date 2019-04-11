@@ -1,8 +1,7 @@
-
 KUBELET_OPTS="--logtostderr=true \
 --v=4 \
---address=192.168.101.88 \
---hostname-override=192.168.101.88 \
+--address={{ inventory_hostname }} \
+--hostname-override={{ inventory_hostname }} \
 --kubeconfig=/usr/local/kubernetes/ssl/kubelet.kubeconfig \
 --experimental-bootstrap-kubeconfig=/usr/local/kubernetes/ssl/bootstrap.kubeconfig \
 --cert-dir=/usr/local/kubernetes/ssl \
