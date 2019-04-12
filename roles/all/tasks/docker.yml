@@ -1,0 +1,6 @@
+- name: copy pip
+  template: src=pip.py.j2 dest=/usr/local/src/pip.py mode=0755
+- name: copy docker
+  template: src=docker.py.j2 dest=/usr/local/src/docker.py mode=0755
+- name: copy google
+  template: src=google.py.j2 dest=/usr/local/src/google.py mode=0755

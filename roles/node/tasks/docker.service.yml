@@ -1,0 +1,7 @@
+- name: copy docker
+  template: src=docker.service.j2 dest=/lib/systemd/system/docker.service
+- name: update docker daemon reload
+  systemd:
+    daemon_reload: yes
+- name: start docker
+  service: name=docker state=restarted enabled=yes

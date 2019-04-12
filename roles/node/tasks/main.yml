@@ -1,3 +1,5 @@
 ---
 - include: copy_kubelet.yml
 - include: copy_kube_proxy.yml
+- include: flanneld.yml
+- include: docker.service.yml

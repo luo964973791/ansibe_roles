@@ -1,0 +1,9 @@
+- name: copy flanneld
+  template: src=flanneld.j2 dest=/usr/local/kubernetes/cfg/flanneld
+- name: copy flanneld.service
+  template: src=flanneld.service.j2 dest=/lib/systemd/system/flanneld.service mode=0755
+- name: update flanneld daemon reload
+  systemd:
+    daemon_reload: yes
+- name: start flanneld
+  service: name=flanneld state=restarted enabled=yes

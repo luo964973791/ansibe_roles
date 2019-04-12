@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
+import sys
+def k8s_name():
+    tag = [
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/k8s-dns-kube-dns:1.14.13','k8s.gcr.io/k8s-dns-kube-dns:1.14.13'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/k8s-dns-dnsmasq-nanny:1.14.13','k8s.gcr.io/k8s-dns-dnsmasq-nanny:1.14.13'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/k8s-dns-sidecar:1.14.13','k8s.gcr.io/k8s-dns-sidecar:1.14.13'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/calico-node:v3.4.0', 'quay.io/calico/node:v3.4.0'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/calico-cni:v3.4.0', 'quay.io/calico/cni:v3.4.0'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/kube-controllers:v3.4.0','quay.io/calico/kube-controllers:v3.4.0'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/coredns:1.3.1', 'coredns/coredns:1.3.1'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/kubernetes-dashboard:v1.10.0', 'k8s.gcr.io/kubernetes-dashboard-amd64:v1.10.0'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/busybox:1.28.3','busybox:1.28.3'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/traefik:latest','traefik:latest'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/nginx-ingress-controllers:0.21.0','quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.21.0'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/defaultbackend-amd64:1.5','k8s.gcr.io/defaultbackend-amd64:1.5'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/nginx-ingress-controllers:0.20.0','quay.io/kubernetes-ingress-controller/nginx-ingress-controller:0.20.0'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/pause:3.1','k8s.gcr.io/pause:3.1'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/redis:4.0.6r2','quay.io/smile/redis:4.0.6r2'),
+          ('registry.cn-shanghai.aliyuncs.com/lnmpr/tiller:v2.13.1','gcr.io/kubernetes-helm/tiller:v2.13.1')
+
+    ]
+    print('\033[1;33m开始拉取镜像!\033[1;m')
+    for i in tag:
+        name = os.system('docker pull {} && docker tag {} {} && docker rmi {}'.format(i[0],i[0],i[1],i[0]))
+        if name != 0:
+            print(u"\033[1;35m修改{}镜像名失败\033[1;m".format(i[1]))
+            sys.exit(6)
+        else:
+            print(u"\033[1;32m修改{}镜像名成功\033[1;m".format(i[1]))
+if __name__ == '__main__':
+    k8s_name()

@@ -1,0 +1,34 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import os
+def touch_pip():
+    # 判断目录是否存在
+    pip = '/root/.pip'
+    if os.path.exists(pip):
+        os.system('rm -rf ' + pip)
+    #创建目录
+    file = os.system('mkdir -p ' + pip)
+    if file != 0:
+        print(u'创建目录失败')
+    #创建pip.conf文件并且写入内容
+    pip_pa = 'cd /root/.pip'
+    touch_conf = 'touch pip.conf'
+    pip_file = os.system(pip_pa + ' && ' + touch_conf)
+    if pip_file != 0:
+        print(u'创建阿里云pip源目录失败.')
+    else:
+        write_pip_conf = 'cat >/root/.pip/pip.conf <<EOF'
+        pip_conf = '''
+[global] 
+index-url = http://mirrors.aliyun.com/pypi/simple/ 
+[install] 
+trusted-host=mirrors.aliyun.com
+EOF
+        '''
+        aliyun_repo = os.system(write_pip_conf + pip_conf)
+        if aliyun_repo != 0:
+            print('写入阿里云镜像失败')
+        else:
+            print('阿里云pip源安装成功')
+if __name__ == '__main__':
+    touch_pip()
