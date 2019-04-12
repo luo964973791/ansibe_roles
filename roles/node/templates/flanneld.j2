@@ -1,4 +1,4 @@
-FLANNEL_OPTIONS="--etcd-endpoints=${ETCD_ENDPOINTS} \
+FLANNEL_OPTIONS="--etcd-endpoints={{ flanneld_etcd }} \
 -etcd-cafile=/usr/local/kubernetes/ssl/ca.pem \
 -etcd-certfile=/usr/local/kubernetes/ssl/apiserver.pem \
 -etcd-keyfile=/usr/local/kubernetes/ssl/apiserver-key.pem"

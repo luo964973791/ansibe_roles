@@ -1,18 +1,20 @@
 [all_server]
-192.168.101.66 etcd_name=etcd1
-192.168.101.77 etcd_name=etcd2
-192.168.101.88 etcd_name=etcd3 
+192.168.101.128 etcd_name=etcd1
+192.168.101.129 etcd_name=etcd2
+192.168.101.130 etcd_name=etcd3 
 [all_server:vars]
-all_etcd="etcd1=https://192.168.101.66:2380,etcd2=https://192.168.101.77:2380,etcd3=https://192.168.101.88:2380"
+all_etcd="etcd1=https://192.168.101.128:2380,etcd2=https://192.168.101.129:2380,etcd3=https://192.168.101.130:2380"
 
 [install_master]
-192.168.101.66
-192.168.101.77
+192.168.101.128
+192.168.101.129
 [install_master:vars]
-vip=192.168.101.99
-master1=192.168.101.66
-master2=192.168.101.77
-etcd_servers="https://192.168.101.66:2379,https://192.168.101.77:2379,https://192.168.101.88:2379"
+vip=192.168.101.66
+master1=192.168.101.128
+master2=192.168.101.129
+etcd_servers="https://192.168.101.128:2379,https://192.168.101.129:2379,https://192.168.101.130:2379"
 
 [install_node]
-192.168.101.88
+192.168.101.130
+[install_node:vars]
+flanneld_etcd="https://192.168.101.128:2379,https://192.168.101.129:2379,https://192.168.101.130:2379"
