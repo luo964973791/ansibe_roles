@@ -1,2 +1,0 @@
-- name: start apiserver service
-  service: name:kube-apiserver state=started enabled=yes

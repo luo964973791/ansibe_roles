@@ -1,0 +1,4 @@
+- name: install keepalived
+  yum: name=keepalived state=installed
+- name: install haproxy
+  yum: name=haproxy state=installed

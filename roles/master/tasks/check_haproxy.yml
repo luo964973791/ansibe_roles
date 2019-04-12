@@ -1,0 +1,2 @@
+- name: copy  haproxy.sh
+  template: src=check_haproxy.sh.j2 dest=/usr/local/kubernetes/cfg/check_haproxy.sh

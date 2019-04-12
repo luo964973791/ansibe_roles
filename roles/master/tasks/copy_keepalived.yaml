@@ -1,0 +1,7 @@
+- name: copy apiserver
+  template: src=keepalived.conf.j2 dest=/etc/keepalived/keepalived.conf
+- name: update keepalived daemon reload
+  systemd:
+    daemon_reload: yes
+- name: start
+  service: name=keepalived state=restarted enabled=yes

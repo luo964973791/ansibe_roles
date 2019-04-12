@@ -2,3 +2,8 @@
   template: src=kube-apiserver.j2 dest=/usr/local/kubernetes/cfg/kube-apiserver
 - name: copy apiserver-service
   template: src=kube-apiserver.service.j2 dest=/lib/systemd/system/kube-apiserver.service mode=0755
+- name: update apierver daemon reload
+  systemd:
+    daemon_reload: yes
+- name: start
+  service: name=kube-apiserver state=restarted enabled=yes

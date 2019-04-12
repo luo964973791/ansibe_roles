@@ -2,3 +2,8 @@
   template: src=kube-scheduler.j2 dest=/usr/local/kubernetes/cfg/kube-scheduler
 - name: copy kube-scheduler-service
   template: src=kube-scheduler.service.j2 dest=/lib/systemd/system/kube-scheduler.service mode=0755
+- name: update kube-scheduler daemon reload
+  systemd:
+    daemon_reload: yes
+- name: start kube-scheduler
+  service: name=kube-scheduler state=restarted enabled=yes

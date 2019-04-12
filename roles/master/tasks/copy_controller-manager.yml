@@ -2,3 +2,8 @@
   template: src=kube-controller-manager.j2 dest=/usr/local/kubernetes/cfg/kube-controller-manager
 - name: copy controller-manager.service
   template: src=kube-controller-manager.service.j2 dest=/lib/systemd/system/kube-controller-manager.service mode=0755
+- name: update kube-controller-manager daemon reload
+  systemd:
+    daemon_reload: yes
+- name: start kube-controller-manager
+  service: name=kube-controller-manager state=restarted enabled=yes

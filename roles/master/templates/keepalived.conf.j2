@@ -1,0 +1,29 @@
+vrrp_script haproxy-check {
+    script "/usr/local/kubernetes/cfg/check_haproxy.sh"
+    interval 3
+    weight -2
+    fall 10
+    rise 2
+}
+
+vrrp_instance haproxy-vip {
+    state BACKUP
+    priority 101
+    interface ens33
+    virtual_router_id 47
+    advert_int 1
+    priority 90
+    unicast_src_ip {{ inventory_hostname }}
+    authentication {
+        auth_type PASS
+        auth_pass x1er44q
+    }
+
+    virtual_ipaddress {
+        {{ vip }}/24
+    }
+
+    track_script {
+        haproxy-check
+    }
+}
