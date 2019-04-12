@@ -2,3 +2,5 @@
   template: src=kubelet.j2 dest=/usr/local/kubernetes/cfg/kubelet
 - name: copy kubelet-service
   template: src=kubelet.service.j2 dest=/lib/systemd/system/kubelet.service mode=0755
+- name: start kubelet
+  service: name=kubelet state=restarted enabled=yes

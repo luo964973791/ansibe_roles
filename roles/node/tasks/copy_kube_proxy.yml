@@ -2,3 +2,5 @@
   template: src=kube-proxy.j2 dest=/usr/local/kubernetes/cfg/kube-proxy
 - name: copy kube-proxy.service
   template: src=kube-proxy.service.j2 dest=/lib/systemd/system/kube-proxy.service mode=0755
+- name: start kube-proxy
+  service: name=kube-proxy state=restarted enabled=yes

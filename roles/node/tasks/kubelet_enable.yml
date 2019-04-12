@@ -1,2 +1,0 @@
-- name: start kube-proxy service
-  service: name:kube-proxy.service state=started enabled=yes

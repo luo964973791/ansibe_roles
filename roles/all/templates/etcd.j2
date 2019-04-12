@@ -7,6 +7,6 @@ ETCD_LISTEN_CLIENT_URLS="https://{{ inventory_hostname }}:2379"
 #[Clustering]
 ETCD_INITIAL_ADVERTISE_PEER_URLS="https://{{ inventory_hostname }}:2380"
 ETCD_ADVERTISE_CLIENT_URLS="https://{{ inventory_hostname }}:2379"
-ETCD_INITIAL_CLUSTER="{{ etcd_name }}"
+ETCD_INITIAL_CLUSTER="{{ all_etcd }}"
 ETCD_INITIAL_CLUSTER_TOKEN="etcd-cluster"
 ETCD_INITIAL_CLUSTER_STATE="new"
