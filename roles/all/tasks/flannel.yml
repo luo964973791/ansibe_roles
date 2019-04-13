@@ -1,0 +1,8 @@
+- name: copy flannel
+  unarchive: src=flannel-v0.11.0-linux-amd64.tar.gz dest=/home copy=yes
+- name: bin flannel
+  copy: src=/home/flanneld dest=/usr/local/kubernetes/bin/flanneld mode=0755
+- name: kubernetes flannel
+  copy: src=/home/mk-docker-opts.sh dest=/usr/local/kubernetes/bin/mk-docker-opts.sh mode=0755
+- name: rm -rf linux-amd64
+  command: rm -rf /home/flanneld-v0.11.0-linux-amd64.tar.gz && rm -rf /home/flanneld && rm -rf /home/mk-docker-opts.sh
