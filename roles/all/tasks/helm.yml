@@ -1,5 +1,5 @@
 - name: copy helm
-  unarchive: src=helm-v2.13.1-linux-amd64.tar.gz dest=/home copy=yes
+  unarchive: src=helm-v2.15.2-linux-amd64.tar.gz dest=/home copy=yes
 - name: bin helm
   copy: src=/home/linux-amd64/helm dest=/usr/local/bin/helm mode=0755
 - name: rm -rf linux-amd64

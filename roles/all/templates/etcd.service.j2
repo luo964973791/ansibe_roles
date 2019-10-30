@@ -15,8 +15,16 @@ ExecStart=/usr/local/kubernetes/bin/etcd \
 --trusted-ca-file=/usr/local/kubernetes/ssl/ca.pem \
 --peer-trusted-ca-file=/usr/local/kubernetes/ssl/ca.pem \
 --client-cert-auth=true \
---peer-client-cert-auth=true
+  --initial-advertise-peer-urls ${ETCD_INITIAL_ADVERTISE_PEER_URLS} \
+  --listen-peer-urls ${ETCD_LISTEN_PEER_URLS} \
+  --listen-client-urls ${ETCD_LISTEN_CLIENT_URLS},http://127.0.0.1:2379 \
+  --advertise-client-urls ${ETCD_ADVERTISE_CLIENT_URLS} \
+  --initial-cluster-token ${ETCD_INITIAL_CLUSTER_TOKEN} \
+  --initial-cluster etcd1=https://192.168.56.200:2380,etcd2=https://192.168.56.201:2380,etcd3=https://192.168.56.202:2380 \
+  --initial-cluster-state new \
+  --data-dir=${ETCD_DATA_DIR}
+Restart=on-failure
+RestartSec=5
 LimitNOFILE=65536
-
 [Install]
 WantedBy=multi-user.target

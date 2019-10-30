@@ -1,5 +1,5 @@
 [all_server]
-192.168.101.128 etcd_name=etcd1
+192.168.6.6 etcd_name=etcd1
 192.168.101.129 etcd_name=etcd2
 192.168.101.130 etcd_name=etcd3 
 [all_server:vars]
