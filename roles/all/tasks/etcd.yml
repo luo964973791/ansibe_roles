@@ -1,12 +1,12 @@
 - name: copy etcd
-  unarchive: src=etcd-v3.4.3-linux-amd64.tar.gz dest=/home copy=yes
+  unarchive: src={{ etcd_version }}.tar.gz dest=/home copy=yes
 - name: bin etcd
-  copy: src=/home/etcd-v3.4.3-linux-amd64/etcd dest=/usr/local/bin/etcd mode=0755
+  copy: src=/home/{{ etcd_version }}/etcd dest=/usr/local/bin/etcd mode=0755
 - name: bin etcdctl
-  copy: src=/home/etcd-v3.4.3-linux-amd64/etcdctl dest=/usr/local/bin/etcdctl mode=0755
+  copy: src=/home/{{ etcd_version }}/etcdctl dest=/usr/local/bin/etcdctl mode=0755
 - name: kubernetes etcd
-  copy: src=/home/etcd-v3.4.3-linux-amd64/etcd dest=/usr/local/kubernetes/bin/etcd mode=0755
+  copy: src=/home/{{ etcd_version }}/etcd dest=/usr/local/kubernetes/bin/etcd mode=0755
 - name: kubernetes etcdctl
-  copy: src=/home/etcd-v3.4.3-linux-amd64/etcdctl dest=/usr/local/kubernetes/bin/etcdctl mode=0755
+  copy: src=/home/{{ etcd_version }}/etcdctl dest=/usr/local/kubernetes/bin/etcdctl mode=0755
 - name: rm -rf linux-amd64
-  command: rm -rf /home/etcd-v3.4.3-linux-amd64*
+  command: rm -rf /home/{{ etcd_version }}

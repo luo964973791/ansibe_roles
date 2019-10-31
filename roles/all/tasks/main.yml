@@ -1,4 +1,2 @@
 ---
-- include: update_time.yml
-- include: copy_etcd.yml
-- include: docker.yml
+- include: etcd.yml
